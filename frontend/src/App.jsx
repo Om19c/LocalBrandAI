@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrainCircuit, Download, Languages, Megaphone, Palette, ShieldCheck, Smartphone, WandSparkles } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Download, Languages, Megaphone, Palette, ShieldCheck, Smartphone, Sparkles, WandSparkles } from 'lucide-react';
 import Header from './components/Header.jsx';
 import CampaignForm from './components/CampaignForm.jsx';
 import ResultCard from './components/ResultCard.jsx';
@@ -80,25 +80,75 @@ export default function App() {
     {toast && <div className="toast">✅ {toast}</div>}
 
     <section className="hero glass-hero">
-      <div className="hero-copy">
-        <p className="eyebrow">AI Growth Strategist • Built for Bharat</p>
-        <h1>Local marketing campaigns that feel made by a real strategist.</h1>
-        <p className="hero-text">Generate platform-specific captions, regional voice scripts, and poster previews for small Indian businesses — fast, clean, and ready to share.</p>
-        <div className="hero-actions">
-          <a className="primary-button" href="#create"><BrainCircuit size={18}/> Create Campaign</a>
-          <a className="ghost-button" href="#features"><SparkIcon/> View Features</a>
-        </div>
+  <div className="hero-copy">
+    <div className="hero-badge">
+      <Sparkles size={16} />
+      <span>AI Growth Strategist for Bharat-first businesses</span>
+    </div>
+
+    <h1>
+      Create local marketing campaigns that look, sound, and sell better.
+    </h1>
+
+    <p className="hero-text">
+      LocalBrandAI helps shops, cafes, salons, restaurants, and small brands generate platform-ready captions,
+      regional voice scripts, and polished poster previews in seconds.
+    </p>
+
+    <div className="hero-actions">
+      <a className="primary-button" href="#create">
+        <BrainCircuit size={18} />
+        Start Creating
+        <ArrowRight size={18} />
+      </a>
+
+      <a className="ghost-button" href="#features">
+        <Download size={17} />
+        Explore Features
+      </a>
+    </div>
+
+    <div className="trust-row">
+      <div>
+        <strong>3+</strong>
+        <span>Platforms</span>
       </div>
-      <div className="hero-visual" aria-hidden="true">
-        <div className="ai-orbit">
-          <span></span><span></span><span></span>
-          <div className="ai-core"><WandSparkles size={44}/></div>
-        </div>
-        <div className="floating-card card-a">Instagram-ready caption</div>
-        <div className="floating-card card-b">Poster preview first</div>
-        <div className="floating-card card-c">Voice ad script</div>
+      <div>
+        <strong>5</strong>
+        <span>Languages</span>
       </div>
-    </section>
+      <div>
+        <strong>1-click</strong>
+        <span>Poster preview</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="hero-visual" aria-hidden="true">
+    <div className="hero-glow-ring" />
+    <div className="ai-orbit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div className="ai-core">
+        <WandSparkles size={44} />
+      </div>
+    </div>
+
+    <div className="floating-card card-a">
+      <span>Instagram</span>
+      Caption + hashtags ready
+    </div>
+    <div className="floating-card card-b">
+      <span>Poster</span>
+      Preview before download
+    </div>
+    <div className="floating-card card-c">
+      <span>Voice</span>
+      Local-language ad script
+    </div>
+  </div>
+</section>
 
     <section className="workspace" id="create">
       <div className="panel form-panel glass-card"><CampaignForm onGenerate={handleGenerate} loading={loading} user={user}/></div>
