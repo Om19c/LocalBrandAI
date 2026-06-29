@@ -18,7 +18,7 @@ export async function generateCampaign(req, res, next) {
       Object.entries(input).map(([key, value]) => [key, String(value).trim()])
     );
 
-    const output = generateMarketingCampaign(cleanInput);
+    const output = await generateMarketingCampaign(cleanInput);
     const voice = prepareVoiceScript(output.voiceScript);
 
     const campaign = {

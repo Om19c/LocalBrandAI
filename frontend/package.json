@@ -1,7 +1,7 @@
 {
   "name": "localbrandai-frontend",
   "version": "1.0.0",
-  "description": "React frontend for LocalBrandAI",
+  "description": "Next-level React frontend for LocalBrandAI with poster download, voice playback, and analytics",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",

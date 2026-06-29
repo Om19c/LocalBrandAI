@@ -1,41 +1,44 @@
 # LocalBrandAI 🚀
 
-**AI Marketing Assistant for Local Indian Businesses**
+**AI Marketing Assistant for Local Indian Businesses**  
+Team: **INDIA RUNS 4** | Leader: **Om Chaudhari**
 
-LocalBrandAI is a mobile-first full-stack MVP that helps small Indian businesses generate promotional captions, WhatsApp messages, Instagram captions, and regional-language voice advertisement scripts from simple business inputs.
+LocalBrandAI is a mobile-first AI-powered marketing assistant that helps small Indian businesses generate ready-to-share promotional campaigns in regional languages. A shop owner enters simple details like business name, offer, target audience, language, platform, and tone. The app generates captions, WhatsApp messages, Instagram captions, hashtags, voice-ad scripts, and downloadable promotional posters.
 
-Team: **INDIA RUNS 4**  
-Leader: **Om Chaudhari**
+## Live Links
 
----
+- Frontend: https://local-brand-ai-jet.vercel.app
+- Backend: https://localbrandai.onrender.com
+- Backend health check: https://localbrandai.onrender.com/health
 
 ## Problem Statement
 
-Small local businesses often struggle with digital marketing because they lack writing confidence, design knowledge, language support, and time. Most existing tools are English-first and too complex for local shop owners.
+Small local businesses often struggle with digital marketing because they do not have time, writing confidence, design skills, or access to professional marketing tools. Many tools are English-first and too complex for small shop owners.
 
 ## Solution
 
-LocalBrandAI allows a business owner to enter details like business name, business type, offer, target audience, language, platform, and tone. The system instantly generates ready-to-share marketing content in a simple local style.
+LocalBrandAI converts basic business inputs into practical marketing assets:
 
----
-
-## Features
-
-- AI-style promotional caption generation
-- WhatsApp message generation
+- Short marketing caption
+- WhatsApp promotional message
 - Instagram caption with hashtags
-- Regional language style output: English, Hindi, Marathi, Gujarati, Tamil
-- Voice advertisement script generation
-- Copy buttons for every output
-- Share to WhatsApp button
-- Campaign history dashboard
-- Delete campaign option
-- Mobile-first responsive UI
-- Clean backend REST API
-- JSON file storage for MVP
-- Future-ready code comments for real AI, translation, voice generation, MongoDB, and authentication
+- Regional-language voice advertisement script
+- Downloadable promotional poster
+- Campaign history and analytics dashboard
 
----
+## Key Features
+
+- ✅ Mobile-first React interface
+- ✅ Node.js + Express backend
+- ✅ Smart mock AI fallback
+- ✅ Gemini API-ready backend integration
+- ✅ Regional language support: English, Hindi, Marathi, Gujarati, Tamil
+- ✅ Voice playback using browser SpeechSynthesis
+- ✅ Downloadable poster generated using HTML Canvas
+- ✅ WhatsApp sharing
+- ✅ Campaign history storage
+- ✅ Analytics dashboard
+- ✅ Deployment-ready for Vercel + Render
 
 ## Tech Stack
 
@@ -44,55 +47,42 @@ LocalBrandAI allows a business owner to enter details like business name, busine
 - Vite
 - CSS
 - Lucide React icons
+- Browser SpeechSynthesis API
+- HTML Canvas poster generation
 
 ### Backend
 - Node.js
 - Express.js
+- CORS
+- dotenv
+- UUID
 - JSON file storage
-- REST API
+- Gemini API-ready AI service
 
-### Future Integrations
-- OpenAI / Gemini / AWS Bedrock for real AI generation
-- Amazon Translate for translation
-- Amazon Polly for voice MP3 generation
-- Amazon S3 for audio storage
-- MongoDB for campaign storage
-- Authentication for business accounts
-
----
-
-## Project Structure
+## Folder Structure
 
 ```text
-LocalBrandAI-complete/
+LocalBrandAI/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Header.jsx
+│   │   │   ├── Analytics.jsx
 │   │   │   ├── CampaignForm.jsx
-│   │   │   ├── ResultCard.jsx
+│   │   │   ├── Header.jsx
 │   │   │   ├── HistoryCard.jsx
-│   │   │   └── Loader.jsx
-│   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   └── Dashboard.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   └── ResultCard.jsx
 │   │   ├── services/
 │   │   │   └── api.js
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── index.css
-│   ├── index.html
 │   ├── package.json
 │   └── vite.config.js
 │
 ├── backend/
-│   ├── server.js
-│   ├── routes/
-│   │   ├── generateRoutes.js
-│   │   └── campaignRoutes.js
 │   ├── controllers/
-│   │   ├── generateController.js
-│   │   └── campaignController.js
+│   ├── routes/
 │   ├── services/
 │   │   ├── aiService.js
 │   │   ├── storageService.js
@@ -100,14 +90,14 @@ LocalBrandAI-complete/
 │   │   └── voiceService.js
 │   ├── data/
 │   │   └── campaigns.json
+│   ├── server.js
 │   ├── package.json
 │   └── .env.example
 │
 ├── screenshots/
-└── README.md
+├── README.md
+└── .gitignore
 ```
-
----
 
 ## API Documentation
 
@@ -115,15 +105,6 @@ LocalBrandAI-complete/
 
 ```http
 GET /health
-```
-
-Response:
-
-```json
-{
-  "status": "ok",
-  "service": "LocalBrandAI Backend"
-}
 ```
 
 ### Generate Campaign
@@ -146,7 +127,7 @@ Request body:
 }
 ```
 
-### Get Campaign History
+### Get Campaigns
 
 ```http
 GET /api/campaigns
@@ -158,11 +139,9 @@ GET /api/campaigns
 DELETE /api/campaigns/:id
 ```
 
----
+## How to Run Locally
 
-## How to Run
-
-### 1. Backend
+### Backend
 
 ```bash
 cd backend
@@ -170,15 +149,13 @@ npm install
 npm run dev
 ```
 
-Backend runs on:
+Backend will run on:
 
 ```text
 http://localhost:5000
 ```
 
-### 2. Frontend
-
-Open a new terminal:
+### Frontend
 
 ```bash
 cd frontend
@@ -186,39 +163,99 @@ npm install
 npm run dev
 ```
 
-Frontend runs on:
+Frontend will run on:
 
 ```text
 http://localhost:5173
 ```
 
----
+## Environment Variables
 
-## Suggested Demo Flow
+### Backend `.env`
 
-1. Open the frontend.
-2. Enter business details.
-3. Select Marathi or Hindi.
-4. Click **Generate Campaign**.
-5. Copy generated WhatsApp message.
-6. Share it using the WhatsApp button.
-7. Show campaign history dashboard.
+Copy `backend/.env.example` to `backend/.env`.
 
----
+```env
+PORT=5000
+FRONTEND_URLS=http://localhost:5173,https://local-brand-ai-jet.vercel.app
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-1.5-flash
+```
+
+If `GEMINI_API_KEY` is empty, the app automatically uses the smart mock campaign generator.
+
+### Frontend `.env`
+
+For local development:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+For deployed frontend on Vercel:
+
+```env
+VITE_API_BASE_URL=https://localbrandai.onrender.com
+```
+
+## Deployment
+
+### Backend on Render
+
+- Root directory: `backend`
+- Build command: `npm install`
+- Start command: `npm start`
+- Add environment variables:
+  - `FRONTEND_URLS=https://local-brand-ai-jet.vercel.app`
+  - `GEMINI_API_KEY=your_key_here` optional
+
+### Frontend on Vercel
+
+- Root directory: `frontend`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Add environment variable:
+  - `VITE_API_BASE_URL=https://localbrandai.onrender.com`
 
 ## Future Scope
 
-- Generate real MP3 voice ads using Amazon Polly
-- Generate posters using canvas or image generation API
-- Add login and business profiles
-- Store campaigns in MongoDB
-- Add analytics dashboard
-- Add WhatsApp Business API integration
-- Add Instagram post scheduler
-- Add support for more Indian languages
+- Real voice MP3 generation using Amazon Polly or Google Text-to-Speech
+- Poster templates with AI image generation
+- MongoDB campaign storage
+- Login and business profiles
+- Campaign performance analytics
+- Instagram/Facebook direct posting integrations
+- PWA support for small shop owners
 
----
+## Hackathon Fit
 
-## Hackathon Pitch Line
+LocalBrandAI fits the AI for Bharat theme by solving a real daily problem for small businesses using simple, practical, regional-language AI.
 
-LocalBrandAI makes AI-powered digital marketing simple, affordable, and local-language friendly for small Indian businesses.
+## V2 Upgrade Features
+
+- Login and registration with secure password hashing using Node crypto
+- Platform-specific output: Instagram shows Instagram caption + hashtags, WhatsApp shows only WhatsApp message, Facebook shows only Facebook post
+- Dark theme toggle with glassmorphism UI
+- Poster preview modal before download
+- PWA support with manifest and service worker
+- Mobile-first responsive UI
+
+### New API Routes
+
+```txt
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
+```
+
+### PWA Notes
+
+After deployment, open the Vercel link on mobile and use **Add to Home Screen** to install LocalBrandAI like an app.
+
+## Latest UI Upgrade
+
+- Removed hero feature pills and moved feature highlights into a polished footer feature section.
+- Improved light theme contrast so text remains readable.
+- Added animated AI orb, floating UI cards, mesh background, and soft morphing gradients.
+- Added cleaner glassmorphism cards and bento-style feature layout.
+- Poster preview, PWA, login/register, platform-specific output, voice playback, and analytics remain supported.
